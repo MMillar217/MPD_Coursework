@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--activity_main.xml
+    S1828600
+    Marc Millar-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:text="Planned Roadworks"
+        android:textSize="20dp"
+        android:id="@+id/lblTitle"
+         />
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/map_icon"
+        android:background="@color/White"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/btn_full_screen_map"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100"
+        android:background="@color/White">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="100"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/points_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/bottomBar">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/silver"
+                android:id="@+id/bottomNav"
+                app:menu="@menu/bottom_navigation_menu">
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
